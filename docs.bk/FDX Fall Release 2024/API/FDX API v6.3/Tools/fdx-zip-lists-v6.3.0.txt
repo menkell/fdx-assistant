@@ -1,0 +1,34 @@
+Creating API zip file: FDX_API_v6.3.0.zip
+2024-11-19T15:22:28+00:00 API/fdxapi.components.yaml - Merged develop into feature/pyu-102-rfc-0334
+2024-10-10T17:59:40+05:30 API/fdxapi.consent.yaml - Updated version to v6.3.0
+2024-11-19T14:35:56+05:30 API/fdxapi.core.yaml - Updated for review comments
+2024-10-10T17:59:40+05:30 API/fdxapi.customer.yaml - Updated version to v6.3.0
+2024-10-10T17:59:40+05:30 API/fdxapi.event-notifications.yaml - Updated version to v6.3.0
+2024-10-10T17:59:40+05:30 API/fdxapi.fraud.yaml - Updated version to v6.3.0
+2024-10-15T13:16:47-05:00 API/fdxapi.meta.yaml - Merge branch 'develop' of bitbucket.org:fdxdev/fdxapi into feature/rfc0274-paystubs
+2024-11-14T18:28:50+05:30 API/fdxapi.money-movement.yaml - DRAFT 0329 - Add ONETIME to Recurring-Payments in Money Movement YAML
+2024-11-13T09:54:44-06:00 API/fdxapi.payroll.yaml - Update to use new query parameters from RFC 0295.
+2024-11-15T14:42:47+05:30 API/fdxapi.recipient-registration.yaml - RFC 0334 - Errata to Correct DCR Scopes
+2024-11-19T14:28:28+05:30 API/fdxapi.registry.yaml - Updated for review comments
+2024-10-15T13:18:35-05:00 API/fdxapi.tax.yaml - Merge branch 'develop' of bitbucket.org:fdxdev/fdxapi into feature/rfc0312-tax-1065k3
+2024-11-13T11:30:31-06:00 API/fdxapi.tax1065k3.yaml - Merge latest head of develop branch to RFC 0312 branch
+2024-11-13T09:54:44-06:00 API/fdxapi.template.yaml - Update to use new query parameters from RFC 0295.
+
+Creating tools zip file: fdx-tools-v6.3.0.zip
+2024-10-15T12:49:36-05:00 README.md - Update v6.3.0 metrics too.
+2024-11-19T10:42:12-06:00 bitbucket-pipelines.yml - Remove separate local-generated metrics output files from commits.
+2024-02-21T15:52:27-06:00 config/components-yamllint.yaml - Update script and ruleset comments. Create new fdx_xor custom function.
+2024-02-21T15:52:27-06:00 config/core-yamllint.yaml - Update script and ruleset comments. Create new fdx_xor custom function.
+2024-11-14T15:27:33-06:00 config/fdx.spectral.ruleset.yaml - Merge branch 'develop' of bitbucket.org:fdxdev/fdxapi into feature/rfc0312-tax-1065k3
+2024-02-28T22:39:25-06:00 config/fdx.test.spectral.ruleset.yaml - Attempt new zip file script, polish rule descriptions
+2024-04-24T16:23:57-05:00 config/fdxapi.components.yaml - Removed line for local testing
+2024-02-22T11:20:58-06:00 config/fdxapi.meta.yaml - Improved rules and comments per PR comments
+2024-02-21T15:52:27-06:00 config/functions/fdx_xor.js - Update script and ruleset comments. Create new fdx_xor custom function.
+2024-02-21T15:52:27-06:00 config/functions/fdx_xor.ts - Update script and ruleset comments. Create new fdx_xor custom function.
+2024-02-21T15:52:27-06:00 config/functions/xorSchema.js - Update script and ruleset comments. Create new fdx_xor custom function.
+2024-02-21T15:52:27-06:00 config/functions/xorSchema.ts - Update script and ruleset comments. Create new fdx_xor custom function.
+2024-02-21T15:52:27-06:00 config/yamllint.yaml - Update script and ruleset comments. Create new fdx_xor custom function.
+2022-04-13T13:42:47+00:00 fdxlint.sh - Merged in feature/build-347 (pull request #615)
+2024-10-10T14:14:44-05:00 lint.sh - File changes for RFC 0312 for IRS Form 1065 K-3
+2023-07-28T10:08:46-06:00 testlint-report.sh - Chmod
+2023-07-28T09:38:56-05:00 testlint.sh - Rename testlint files and update format rule message

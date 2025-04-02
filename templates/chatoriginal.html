@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FDX Assistant</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 700px; margin: auto; }
+        .assistant { color: #0056b3; white-space: pre-wrap; }
+        .user { color: #111; font-weight: bold; white-space: pre-wrap; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>💬 FDX Tutorial Assistant</h1>
+    <form method="post">
+        <textarea name="user_input" rows="3" style="width: 100%;" placeholder="Ask a question about FDX..."></textarea><br><br>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if messages %}
+        <hr>
+        {% for role, content in messages %}
+            <p class="{{ role }}"><strong>{{ role.capitalize() }}:</strong><br>{{ content }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
