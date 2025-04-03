@@ -4,59 +4,121 @@
     <meta charset="UTF-8">
     <title>FDX Assistant</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 2em; }
-        .completed { text-decoration: line-through; color: gray; }
-        .chat-box { margin-bottom: 2em; }
-        .message { margin: 1em 0; }
-        .user { font-weight: bold; }
-        .assistant { margin-left: 2em; color: #333; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #f7f7f7;
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 1px solid #ccc;
+        }
+
+        .content {
+            width: 75%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-box {
+            margin-bottom: 1em;
+        }
+
+        .chat-box input[type="text"] {
+            width: 70%;
+            padding: 10px;
+        }
+
+        .chat-box button {
+            padding: 10px 15px;
+        }
+
+        .message {
+            margin: 1em 0;
+        }
+
+        .user {
+            font-weight: bold;
+        }
+
+        .assistant {
+            margin-left: 1em;
+            color: #333;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            cursor: pointer;
+            margin-bottom: 0.5em;
+        }
     </style>
     <script>
         function setInput(topic) {
             document.getElementById('user_input').value = topic;
         }
-
-
     </script>
 </head>
 <body>
-    <h1>FDX Assistant</h1>
+    <div class="container">
+        <!-- LEFT COLUMN: Topics -->
+        <div class="sidebar">
+            <h2>Overview</h2>
+            <ol>
+                {% for topic in topics %}
+                    <li onclick="setInput('{{ topic }}')"
+                        {% if topic in completed_topics %}class="completed"{% endif %}>
+                        {{ topic }}
+                    </li>
+                {% endfor %}
+            </ol>
 
-    <h2>Overview</h2>
-    <ol>
-        {% for topic in topics %}
-            <li onclick="setInput('{{ topic }}')"
-                {% if topic in completed_topics %}class="completed"{% endif %}>
-                {{ topic }}
-            </li>
-        {% endfor %}
-    </ol>
-
-    <h2>Advanced Topics</h2>
-    <ol start="3">
-        {% for topic in topics2 %}
-            <li onclick="setInput('{{ topic }}')"
-                {% if topic in completed_topics %}class="completed"{% endif %}>
-                {{ topic }}
-            </li>
-        {% endfor %}
-    </ol>
-
-    <form method="POST">
-        <div class="chat-box">
-            <input type="text" name="user_input" id="user_input" placeholder="Ask a question..." style="width: 80%;">
-            <button type="submit">Ask</button>
+            <h2>Advanced Topics</h2>
+            <ol start="3">
+                {% for topic in topics2 %}
+                    <li onclick="setInput('{{ topic }}')"
+                        {% if topic in completed_topics %}class="completed"{% endif %}>
+                        {{ topic }}
+                    </li>
+                {% endfor %}
+            </ol>
         </div>
-    </form>
 
-    <div class="messages">
-        {% for role, message in messages %}
-            <div class="message">
-                <div class="user">{{ role.capitalize() }}:</div>
-                <div class="assistant">{{ message|safe }}</div>
+        <!-- RIGHT COLUMN: Chat -->
+        <div class="content">
+            <form method="POST">
+                <div class="chat-box">
+                    <input type="text" name="user_input" id="user_input" placeholder="Ask a question...">
+                    <button type="submit">Ask</button>
+                </div>
+            </form>
+
+            <div class="messages">
+                {% for role, message in messages %}
+                    <div class="message">
+                        <div class="user">{{ role.capitalize() }}:</div>
+                        <div class="assistant">{{ message|safe }}</div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     </div>
 </body>
 </html>
-ß
