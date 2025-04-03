@@ -15,6 +15,11 @@ import shelve
 
 
 CACHE_PATH = os.getenv("CACHE_PATH", "/var/cache/fdx/chat_cache.db")
+for suffix in ("", ".bak", ".dat", ".dir", ".db"):
+    try:
+        os.remove(CACHE_PATH + suffix)
+    except FileNotFoundError:
+        continue
 
 
 # Setup logging

@@ -6,9 +6,8 @@ services:
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn app:app"
     envVars:
-      - key: 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
-        sync: false
-    autoDeploy: true
+      - key: OPENAI_API_KEY
+       sync: false
     disk:
       name: cache-disk
       mountPath: /var/cache/fdx
