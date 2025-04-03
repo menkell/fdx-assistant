@@ -145,6 +145,9 @@ def chat():
         if cached:
             app_logger.debug("✅ Cache hit. Returning cached response.")
             messages.extend(cached)
+            for topic in TOPICS + TOPICS2:
+                if topic.lower() in user_input.lower() and topic not in session["completed_topics"]:
+                    session["completed_topics"].append(topic)
         else:
             # Wait for previous run to complete
             while True:
