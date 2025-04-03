@@ -121,7 +121,7 @@ def get_cache_key(text):
 
 def get_cached_response(prompt):
     key = get_cache_key(prompt)
-    with shelve.open("chat_cache.db") as cache:
+    with shelve.open(CACHE_PATH) as cache:
         return cache.get(key)
 
 def store_response(prompt, html_blocks):
