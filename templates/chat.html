@@ -57,8 +57,7 @@
         }
 
         .completed {
-            text-decoration: line-through;
-            color: gray;
+            color: blueviolet;
         }
 
         ol {
@@ -80,7 +79,7 @@
     <div class="container">
         <!-- LEFT COLUMN: Topics -->
         <div class="sidebar">
-            <h2>Overview</h2>
+            <h2>U.S. Open Banking Introduction</h2>
             <ol>
                 {% for topic in topics %}
                     <li onclick="setInput('{{ topic }}')"
@@ -90,8 +89,8 @@
                 {% endfor %}
             </ol>
 
-            <h2>Advanced Topics</h2>
-            <ol start="3">
+            <h2>State of Data Sharing</h2>
+            <ol start="1">
                 {% for topic in topics2 %}
                     <li onclick="setInput('{{ topic }}')"
                         {% if topic in completed_topics %}class="completed"{% endif %}>
