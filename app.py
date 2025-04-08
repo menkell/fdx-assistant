@@ -113,6 +113,11 @@ def create_or_load_assistant():
     return assistant.id, vector_store.id, thread.id
 
 assistant_id, vector_store_id, thread_id = create_or_load_assistant()
+
+app_logger.debug(f"⏳ Assistant_iid: {assistant_id}")
+app_logger.debug(f"⏳ vector_store_id: {vector_store_id}")
+
+
 assistant = openai.beta.assistants.retrieve(assistant_id)
 
 # Cache utilities
