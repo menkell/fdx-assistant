@@ -15,11 +15,11 @@ import shelve
 
 
 CACHE_PATH = os.getenv("CACHE_PATH", "/var/cache/fdx/chat_cache.db")
-for suffix in ("", ".bak", ".dat", ".dir", ".db"):
-    try:
-        os.remove(CACHE_PATH + suffix)
-    except FileNotFoundError:
-        continue
+#for suffix in ("", ".bak", ".dat", ".dir", ".db"):
+#    try:
+#       os.remove(CACHE_PATH + suffix)
+#    except FileNotFoundError:
+#        continue
 
 
 # Setup logging
@@ -38,7 +38,7 @@ Session(app)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 CONFIG_FILE = "assistant_config.json"
 DOCS_FOLDER = "docs"
-TOPICS = ["History and evolution of Open Banking in the US and the timelines", "What is CFPB 1033 and ","What is the CFPB 1033 compliance timeline", "What is Financial Data Exchange (FDX)"]
+TOPICS = ["Brief history of Open Banking with timelines","Open Banking in North America", "What is CFPB 1033","What is the CFPB 1033 compliance timeline", "What is Financial Data Exchange (FDX)"]
 TOPICS2 = ["What is screen scraping", "What are the challenges with screenscraping","What are the comparision between data sharing with Open Banking and Screen scraping", "Benefits of Financial Insitutions Adopting Open Banking", "Benefits of Third Party Providers adopting Open Banking", "Challenge Financial Insitutions face in adopting Open Banking", "Callenges Third Party Providers face in adopting Open Banking"]
 
 def save_ids(assistant_id, vector_store_id, thread_id):
